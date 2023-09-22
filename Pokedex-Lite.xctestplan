@@ -1,0 +1,45 @@
+{
+  "configurations" : [
+    {
+      "id" : "C4D9F426-6A8A-4969-8FCD-A391E8ABA561",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Pokedex-Lite.xcodeproj",
+      "identifier" : "17C7FA922ABE044A00D0C368",
+      "name" : "Pokedex-Lite"
+    }
+  },
+  "testTargets" : [
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Pokedex-Lite.xcodeproj",
+        "identifier" : "17C7FAD12ABE391100D0C368",
+        "name" : "Pokedex-LiteTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/DependencyContainer",
+        "identifier" : "DependencyContainerTests",
+        "name" : "DependencyContainerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Networking",
+        "identifier" : "NetworkingTests",
+        "name" : "NetworkingTests"
+      }
+    }
+  ],
+  "version" : 1
+}
