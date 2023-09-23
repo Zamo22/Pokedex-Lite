@@ -39,6 +39,7 @@
 		17C7FAD22ABE391100D0C368 /* Pokedex-LiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pokedex-LiteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C7FADB2ABE396700D0C368 /* Pokedex-Lite.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Pokedex-Lite.xctestplan"; sourceTree = "<group>"; };
 		17C7FADF2ABE5A2900D0C368 /* Components */ = {isa = PBXFileReference; lastKnownFileType = text; name = Components; path = Packages/Components; sourceTree = SOURCE_ROOT; };
+		17C7FAEA2ABE83D100D0C368 /* Core */ = {isa = PBXFileReference; lastKnownFileType = text; name = Core; path = Packages/Core; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 		17C7FA952ABE044A00D0C368 /* Pokedex-Lite */ = {
 			isa = PBXGroup;
 			children = (
+				17C7FAEA2ABE83D100D0C368 /* Core */,
 				17C7FADF2ABE5A2900D0C368 /* Components */,
 				17C7FAA62ABE353000D0C368 /* TestUtils */,
 				17C7FAA52ABE299400D0C368 /* DependencyContainer */,
