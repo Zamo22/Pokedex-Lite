@@ -55,7 +55,8 @@ struct PokemonCardView: View {
         HStack(alignment: .bottom, spacing: 8) {
             infoStack(for: pokemon)
 
-            AsyncImage(url: URL(string: pokemon.sprites?.officialArtworkFrontDefault ?? "")) { image in
+            CachedAsyncImage(url: URL(string: pokemon.sprites?.officialArtworkFrontDefault ?? ""),
+                             urlCache: .imageCache) { image in
                 image.resizable().aspectRatio(contentMode: .fit)
             } placeholder: {
                 LoadingView(loaderSize: 20)
