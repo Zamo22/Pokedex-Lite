@@ -8,7 +8,6 @@
 import Foundation
 
 // Note: I've only taken a few fields from the API that I felt were valid here
-// Additionally, I've made some assumptions about nullability based on logic as the API doesn't seem to specify
 
 struct Pokemon: Decodable {
     var name: String
@@ -17,5 +16,5 @@ struct Pokemon: Decodable {
     var weight: Int?
     var stats: [PokemonStat]?
     var sprites: PokemonSprites?
-    var types: [PokemonType]?
+    var types: [PokemonTypeDetails]?
 }

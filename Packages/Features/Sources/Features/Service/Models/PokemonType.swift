@@ -7,22 +7,23 @@
 
 import Foundation
 
-struct PokemonType: Decodable {
-    var slot: Int?
-    var name: String?
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.slot = try container.decodeIfPresent(Int.self, forKey: .slot)
-        let typeDetail = try container.decode(PokemonTypeDetails.self, forKey: .type)
-        self.name = typeDetail.name
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case slot, type
-    }
-
-    private struct PokemonTypeDetails: Decodable {
-        var name: String?
-    }
+enum PokemonType: String, Decodable {
+    case normal
+    case fire
+    case water
+    case electric
+    case grass
+    case ice
+    case fighting
+    case poison
+    case ground
+    case flying
+    case psychic
+    case bug
+    case rock
+    case ghost
+    case dragon
+    case dark
+    case steel
+    case fairy
 }

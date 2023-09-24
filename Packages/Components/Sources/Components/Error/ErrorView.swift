@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ErrorView: View {
+public struct ErrorView: View {
 
     let errorMessage: String
 
@@ -15,7 +15,7 @@ struct ErrorView: View {
         self.errorMessage = message
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 8) {
             Image("errorImage", bundle: .module)
                 .padding(.bottom, 48)
@@ -25,6 +25,7 @@ struct ErrorView: View {
 
             Text(errorMessage)
                 .font(.body)
+                .multilineTextAlignment(.center)
 
         }
     }

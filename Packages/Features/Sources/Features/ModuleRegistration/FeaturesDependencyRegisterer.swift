@@ -16,6 +16,8 @@ public struct FeaturesDependencyRegisterer: ModuleDependencyRegisterer {
         container.register(PokemonService.self, creation: PokemonServiceImplementation.init)
         container.register(PokemonListRepository.self, creation: PokemonListRepositoryImplementation.init)
         container.register(InitialViewProvider.self, creation: PokemonInitialViewProvider.init)
+        container.register(PokemonDetailsRepository.self,
+                           creation: PokemonDetailsRepositoryImplementation.init)
     }
 
 }

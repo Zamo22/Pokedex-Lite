@@ -9,14 +9,16 @@ import Foundation
 import Components
 import DependencyContainer
 
+@MainActor
 class PokemonListViewModel: ObservableObject {
 
     @Injected
     var repository: PokemonListRepository
 
+    @Published
     var pokemonList: Loadable<[PokemonListItem]> = .loading
 
-    func fetchPokemonList() async {
+    @Sendable func fetchPokemonList() async {
         do {
             let list = try await repository.getPokemonList()
             pokemonList = .loaded(list)

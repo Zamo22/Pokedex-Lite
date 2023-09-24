@@ -41,6 +41,7 @@
 		17C7FADF2ABE5A2900D0C368 /* Components */ = {isa = PBXFileReference; lastKnownFileType = text; name = Components; path = Packages/Components; sourceTree = SOURCE_ROOT; };
 		17C7FAEA2ABE83D100D0C368 /* Core */ = {isa = PBXFileReference; lastKnownFileType = text; name = Core; path = Packages/Core; sourceTree = SOURCE_ROOT; };
 		17C7FAEB2ABFA78300D0C368 /* Features */ = {isa = PBXFileReference; lastKnownFileType = text; name = Features; path = Packages/Features; sourceTree = SOURCE_ROOT; };
+		17C7FAF02ABFD00900D0C368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 		17C7FA952ABE044A00D0C368 /* Pokedex-Lite */ = {
 			isa = PBXGroup;
 			children = (
+				17C7FAF02ABFD00900D0C368 /* Info.plist */,
 				17C7FAEB2ABFA78300D0C368 /* Features */,
 				17C7FAEA2ABE83D100D0C368 /* Core */,
 				17C7FADF2ABE5A2900D0C368 /* Components */,
@@ -374,6 +376,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pokedex-Lite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pokedex-Lite/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -402,6 +405,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pokedex-Lite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pokedex-Lite/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

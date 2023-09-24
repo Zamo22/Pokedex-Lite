@@ -8,8 +8,8 @@
 import SwiftUI
 import Lottie
 
-struct LoadingView: View {
-    var body: some View {
+public struct LoadingView: View {
+    public var body: some View {
         VStack {
             Spacer()
             HStack {

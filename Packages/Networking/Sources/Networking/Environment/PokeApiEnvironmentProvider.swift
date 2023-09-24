@@ -11,7 +11,7 @@ struct PokeApiEnvironmentProvider: EnvironmentProvider {
 
     func provideBaseURL() -> URL {
         var components = URLComponents()
-        components.scheme = "http"
+        components.scheme = "https"
         components.host = "pokeapi.co"
         components.path = "/api/v2"
         components.port = 443

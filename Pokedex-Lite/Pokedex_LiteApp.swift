@@ -18,6 +18,10 @@ struct Pokedex_LiteApp: App {
                             FeaturesDependencyRegisterer()]
     )
 
+    init() {
+        container.initialise()
+    }
+
     var body: some Scene {
         WindowGroup {
             container.view
