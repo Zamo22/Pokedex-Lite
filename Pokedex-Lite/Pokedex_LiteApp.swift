@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import Core
+import Features
+import Networking
 
 @main
 struct Pokedex_LiteApp: App {
+
+    var container = Container(
+        moduleRegisterers: [NetworkingDependencyRegisterer(),
+                            FeaturesDependencyRegisterer()]
+    )
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            container.view
         }
     }
 }

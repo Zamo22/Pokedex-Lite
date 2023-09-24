@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		17C7FA972ABE044A00D0C368 /* Pokedex_LiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FA962ABE044A00D0C368 /* Pokedex_LiteApp.swift */; };
-		17C7FA992ABE044A00D0C368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FA982ABE044A00D0C368 /* ContentView.swift */; };
 		17C7FA9B2ABE044C00D0C368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FA9A2ABE044C00D0C368 /* Assets.xcassets */; };
 		17C7FA9E2ABE044C00D0C368 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FA9D2ABE044C00D0C368 /* Preview Assets.xcassets */; };
 		17C7FAE22ABE5ADC00D0C368 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE12ABE5ADC00D0C368 /* Lottie */; };
 		17C7FAE52ABE5D5400D0C368 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE42ABE5D5400D0C368 /* Components */; };
 		17C7FAE72ABE5D5700D0C368 /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE62ABE5D5700D0C368 /* DependencyContainer */; };
 		17C7FAE92ABE5D7700D0C368 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE82ABE5D7700D0C368 /* Networking */; };
+		17C7FAED2ABFA95B00D0C368 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAEC2ABFA95B00D0C368 /* Core */; };
+		17C7FAEF2ABFA96200D0C368 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAEE2ABFA96200D0C368 /* Features */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,6 @@
 /* Begin PBXFileReference section */
 		17C7FA932ABE044A00D0C368 /* Pokedex-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C7FA962ABE044A00D0C368 /* Pokedex_LiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex_LiteApp.swift; sourceTree = "<group>"; };
-		17C7FA982ABE044A00D0C368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17C7FA9A2ABE044C00D0C368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17C7FA9D2ABE044C00D0C368 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17C7FAA42ABE260200D0C368 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = text; name = Networking; path = Packages/Networking; sourceTree = SOURCE_ROOT; };
@@ -40,6 +40,7 @@
 		17C7FADB2ABE396700D0C368 /* Pokedex-Lite.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Pokedex-Lite.xctestplan"; sourceTree = "<group>"; };
 		17C7FADF2ABE5A2900D0C368 /* Components */ = {isa = PBXFileReference; lastKnownFileType = text; name = Components; path = Packages/Components; sourceTree = SOURCE_ROOT; };
 		17C7FAEA2ABE83D100D0C368 /* Core */ = {isa = PBXFileReference; lastKnownFileType = text; name = Core; path = Packages/Core; sourceTree = SOURCE_ROOT; };
+		17C7FAEB2ABFA78300D0C368 /* Features */ = {isa = PBXFileReference; lastKnownFileType = text; name = Features; path = Packages/Features; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +51,8 @@
 				17C7FAE52ABE5D5400D0C368 /* Components in Frameworks */,
 				17C7FAE72ABE5D5700D0C368 /* DependencyContainer in Frameworks */,
 				17C7FAE92ABE5D7700D0C368 /* Networking in Frameworks */,
+				17C7FAEF2ABFA96200D0C368 /* Features in Frameworks */,
+				17C7FAED2ABFA95B00D0C368 /* Core in Frameworks */,
 				17C7FAE22ABE5ADC00D0C368 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,13 +89,13 @@
 		17C7FA952ABE044A00D0C368 /* Pokedex-Lite */ = {
 			isa = PBXGroup;
 			children = (
+				17C7FAEB2ABFA78300D0C368 /* Features */,
 				17C7FAEA2ABE83D100D0C368 /* Core */,
 				17C7FADF2ABE5A2900D0C368 /* Components */,
 				17C7FAA62ABE353000D0C368 /* TestUtils */,
 				17C7FAA52ABE299400D0C368 /* DependencyContainer */,
 				17C7FAA42ABE260200D0C368 /* Networking */,
 				17C7FA962ABE044A00D0C368 /* Pokedex_LiteApp.swift */,
-				17C7FA982ABE044A00D0C368 /* ContentView.swift */,
 				17C7FA9A2ABE044C00D0C368 /* Assets.xcassets */,
 				17C7FA9C2ABE044C00D0C368 /* Preview Content */,
 			);
@@ -135,6 +138,8 @@
 				17C7FAE42ABE5D5400D0C368 /* Components */,
 				17C7FAE62ABE5D5700D0C368 /* DependencyContainer */,
 				17C7FAE82ABE5D7700D0C368 /* Networking */,
+				17C7FAEC2ABFA95B00D0C368 /* Core */,
+				17C7FAEE2ABFA96200D0C368 /* Features */,
 			);
 			productName = "Pokedex-Lite";
 			productReference = 17C7FA932ABE044A00D0C368 /* Pokedex-Lite.app */;
@@ -223,7 +228,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C7FA992ABE044A00D0C368 /* ContentView.swift in Sources */,
 				17C7FA972ABE044A00D0C368 /* Pokedex_LiteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +514,14 @@
 		17C7FAE82ABE5D7700D0C368 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		17C7FAEC2ABFA95B00D0C368 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		17C7FAEE2ABFA96200D0C368 /* Features */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Features;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

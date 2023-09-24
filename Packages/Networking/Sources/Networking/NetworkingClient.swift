@@ -20,6 +20,10 @@ public protocol NetworkingClient {
     func get<T: Decodable>(from path: String,
                            with queryParameters: [URLQueryItem]) async throws -> T
 
+    /// GET service call to a particular url. Does not peform any URL construction and simply directly hits the URL
+    /// - Parameter urlString: The URL String used to perform the request
+    func get<T: Decodable>(fromUrl urlString: String) async throws -> T
+
     /// POST service call to a particular path with a body.
     /// - Parameters:
     ///   - path: Endpoint to execute the POST call. Resolves against the provided base endpoint.

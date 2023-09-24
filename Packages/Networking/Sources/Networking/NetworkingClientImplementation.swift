@@ -20,6 +20,10 @@ class NetworkingClientImplementation: NetworkingClient {
         )
     }
 
+    func get<T>(fromUrl urlString: String) async throws -> T where T : Decodable {
+        try await performRestRequest(constructUrlRequest(for: urlString))
+    }
+
     func post<T, U>(to path: String, with body: T) async throws -> U where T : Encodable, U : Decodable {
         let bodyData = try JSONEncoder().encode(body)
         return try await performRestRequest(
@@ -43,6 +47,18 @@ private extension NetworkingClientImplementation {
         var urlRequest = URLRequest(url: fullURL)
         urlRequest.httpMethod = restMethod
         urlRequest.httpBody = bodyData
+        return urlRequest
+    }
+
+    private func constructUrlRequest(
+        for urlString: String,
+        restMethod: String = "GET"
+    ) throws -> URLRequest {
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = restMethod
         return urlRequest
     }
 

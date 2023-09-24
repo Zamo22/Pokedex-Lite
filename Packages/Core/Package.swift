@@ -13,17 +13,13 @@ let package = Package(
             targets: ["Core"]),
     ],
     dependencies: [
-        .package(path: "./Packages/DependencyContainer"),
-        .package(path: "./Packages/Networking"),
-        .package(path: "./Packages/Components")
+        .package(path: "./Packages/DependencyContainer")
     ],
     targets: [
         .target(
             name: "Core",
             dependencies: [
-                "DependencyContainer",
-                "Networking",
-                "Components"
+                "DependencyContainer"
             ]),
         .testTarget(
             name: "CoreTests",
