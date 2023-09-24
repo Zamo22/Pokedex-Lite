@@ -12,14 +12,15 @@ import Foundation
 struct Pokemon: Decodable {
     var name: String
     var id: Int
-    var height: Int?
-    var weight: Int?
-    var stats: [PokemonStat]?
+    var height: Int
+    var weight: Int
+    var stats: [PokemonStat]
     var sprites: PokemonSprites?
     var types: [PokemonTypeDetails]?
+    var abilities: [PokemonAbilityDetails]?
 }
 
-// MARK: - Helpers
+// MARK: - Formatted Details
 extension Pokemon {
 
     var sortedTypes: [PokemonType] {
@@ -27,17 +28,23 @@ extension Pokemon {
         return types.sorted(by: { $0.slot ?? 0 < $1.slot ?? 1 }).compactMap { $0.type }
     }
 
-}
-
-// MARK: - Preview helpers
-extension Pokemon {
-    static var example: Self {
-        .init(name: "ivysaur", id: 2, height: 10, weight: 13,
-              stats: [.hp(60), .attack(62), .defense(63),
-                      .specialAttack(80), .specialDefense(80), .speed(60)],
-              sprites: .init(
-                frontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-                officialFrontDefault: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"),
-              types: [.init(slot: 1, type: .grass), .init(slot: 2, type: .poison)])
+    var formattedId: String {
+        "#\(String(format: "%03d", id))"
     }
+
+    var heightInMeters: String {
+        let height: Double = Double((height)) / 10
+        return "\(String(format: "%.1f", height)) m"
+    }
+
+    var weightInKilograms: String {
+        let weight: Double = Double((weight)) / 10
+        return "\(String(format: "%.1f", weight)) kg"
+    }
+
+    var concatenatedAbilities: String {
+        guard let abilities else { return "N/A" }
+        return abilities.map { $0.ability.name.capitalized }.joined(separator: ", ")
+    }
+
 }

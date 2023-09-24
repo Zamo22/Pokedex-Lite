@@ -22,10 +22,10 @@ struct PokemonListView: View {
                 gridView(using: list)
             }
             .task(viewModel.fetchPokemonList)
-        }
+        }.accentColor(.white)
     }
 
-    func gridView(using list: [PokemonListItem]) -> some View {
+    private func gridView(using list: [PokemonListItem]) -> some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 8) {
                 ForEach(list) { pokemon in

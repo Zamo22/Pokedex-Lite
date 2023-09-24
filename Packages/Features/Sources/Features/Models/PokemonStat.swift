@@ -52,3 +52,46 @@ enum PokemonStat: Decodable {
         var name: String?
     }
 }
+
+// MARK: - Accessors
+extension PokemonStat {
+    var value: Int {
+        switch self {
+        case .hp(let hp):
+            return hp
+        case .attack(let attack):
+            return attack
+        case .defense(let defense):
+            return defense
+        case .specialAttack(let specialAttack):
+            return specialAttack
+        case .specialDefense(let specialDefense):
+            return specialDefense
+        case .speed(let speed):
+            return speed
+        }
+    }
+
+    var name: String {
+        switch self {
+        case .hp:
+            return "HP"
+        case .attack:
+            return "Attack"
+        case .defense:
+            return "Defense"
+        case .specialAttack:
+            return "Special Attack"
+        case .specialDefense:
+            return "Special Defense"
+        case .speed:
+            return "Speed"
+        }
+    }
+}
+
+extension PokemonStat: Hashable, Identifiable {
+    var id: Self {
+        return self
+    }
+}

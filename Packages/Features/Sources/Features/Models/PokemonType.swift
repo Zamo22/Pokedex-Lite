@@ -39,7 +39,7 @@ extension PokemonType: Identifiable {
 extension PokemonType {
 
     var backgroundColor: Color {
-        associatedColor.opacity(0.85)
+        associatedColor.opacity(0.8)
     }
 
     var associatedColor: Color {
