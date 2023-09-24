@@ -9,6 +9,7 @@ import Foundation
 import Components
 import DependencyContainer
 
+@MainActor
 class PokemonCardViewModel: ObservableObject {
 
     let pokemon: PokemonListItem
@@ -23,7 +24,7 @@ class PokemonCardViewModel: ObservableObject {
         self.pokemon = pokemon
     }
 
-    func fetchPokemonDetails() async {
+    @Sendable func fetchPokemonDetails() async {
         do {
             let details = try await repository.getPokemonDetails(fromUrl: pokemon.url)
             pokemonDetails = .loaded(details)
@@ -31,5 +32,4 @@ class PokemonCardViewModel: ObservableObject {
             pokemonDetails = .error(error)
         }
     }
-    
 }

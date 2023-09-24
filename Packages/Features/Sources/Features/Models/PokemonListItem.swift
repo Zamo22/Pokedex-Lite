@@ -19,9 +19,3 @@ extension PokemonListItem: Identifiable {
     }
 
 }
-
-extension PokemonListItem {
-    static var example: Self {
-        .init(name: "squirtle", url: "https://pokeapi.co/api/v2/pokemon/11/")
-    }
-}

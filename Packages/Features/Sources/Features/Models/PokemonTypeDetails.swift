@@ -11,6 +11,11 @@ struct PokemonTypeDetails: Decodable {
     var slot: Int?
     var type: PokemonType?
 
+    init(slot: Int?, type: PokemonType?) {
+        self.slot = slot
+        self.type = type
+    }
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.slot = try container.decodeIfPresent(Int.self, forKey: .slot)

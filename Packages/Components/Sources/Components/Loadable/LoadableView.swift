@@ -33,12 +33,12 @@ public struct LoadableView<Content: View,
         VStack {
             switch loadable {
             case .loading:
-                LoadingView()
+                loadingView()
                     .disabled(true)
             case .loaded(let result):
                 contentView(result)
             case .error(let error):
-                ErrorView(message: error.localizedDescription)
+                errorView(error)
             }
         }
     }
@@ -48,32 +48,13 @@ public struct LoadableView<Content: View,
 public extension LoadableView {
 
     init(_ loadable: Binding<Loadable<T>>,
-         @ViewBuilder contentView: @escaping (T) -> Content,
-         @ViewBuilder errorView: @escaping () -> ErrorContent)
-    where Loading == LoadingView {
-        self.init(loadable,
-                  contentView: contentView,
-                  loadingView: { LoadingView() },
-                  errorView: { _ in errorView() })
-    }
-
-    init(_ loadable: Binding<Loadable<T>>,
-         @ViewBuilder contentView: @escaping (T) -> Content,
-         @ViewBuilder errorView: @escaping (Error) -> ErrorContent)
-    where Loading == LoadingView {
-        self.init(loadable,
-                  contentView: contentView,
-                  loadingView: { LoadingView() },
-                  errorView: errorView)
-    }
-
-    init(_ loadable: Binding<Loadable<T>>,
          @ViewBuilder contentView: @escaping (T) -> Content)
     where Loading == LoadingView,
     ErrorContent == ErrorView {
         self.init(loadable,
                   contentView: contentView,
-                  errorView: { ErrorView() })
+                  loadingView: { LoadingView() },
+                  errorView: { error in ErrorView(message: error.localizedDescription) })
     }
 
 }

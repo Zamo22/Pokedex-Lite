@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1742798D2AC090FC003F6FE0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1742798C2AC090FC003F6FE0 /* Lottie */; };
 		17C7FA972ABE044A00D0C368 /* Pokedex_LiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7FA962ABE044A00D0C368 /* Pokedex_LiteApp.swift */; };
 		17C7FA9B2ABE044C00D0C368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FA9A2ABE044C00D0C368 /* Assets.xcassets */; };
 		17C7FA9E2ABE044C00D0C368 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C7FA9D2ABE044C00D0C368 /* Preview Assets.xcassets */; };
-		17C7FAE22ABE5ADC00D0C368 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE12ABE5ADC00D0C368 /* Lottie */; };
 		17C7FAE52ABE5D5400D0C368 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE42ABE5D5400D0C368 /* Components */; };
 		17C7FAE72ABE5D5700D0C368 /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE62ABE5D5700D0C368 /* DependencyContainer */; };
 		17C7FAE92ABE5D7700D0C368 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 17C7FAE82ABE5D7700D0C368 /* Networking */; };
@@ -54,7 +54,7 @@
 				17C7FAE92ABE5D7700D0C368 /* Networking in Frameworks */,
 				17C7FAEF2ABFA96200D0C368 /* Features in Frameworks */,
 				17C7FAED2ABFA95B00D0C368 /* Core in Frameworks */,
-				17C7FAE22ABE5ADC00D0C368 /* Lottie in Frameworks */,
+				1742798D2AC090FC003F6FE0 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,12 +136,12 @@
 			);
 			name = "Pokedex-Lite";
 			packageProductDependencies = (
-				17C7FAE12ABE5ADC00D0C368 /* Lottie */,
 				17C7FAE42ABE5D5400D0C368 /* Components */,
 				17C7FAE62ABE5D5700D0C368 /* DependencyContainer */,
 				17C7FAE82ABE5D7700D0C368 /* Networking */,
 				17C7FAEC2ABFA95B00D0C368 /* Core */,
 				17C7FAEE2ABFA96200D0C368 /* Features */,
+				1742798C2AC090FC003F6FE0 /* Lottie */,
 			);
 			productName = "Pokedex-Lite";
 			productReference = 17C7FA932ABE044A00D0C368 /* Pokedex-Lite.app */;
@@ -194,7 +194,7 @@
 			);
 			mainGroup = 17C7FA8A2ABE044A00D0C368;
 			packageReferences = (
-				17C7FAE02ABE5ADC00D0C368 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				1742798B2AC090FC003F6FE0 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 17C7FA942ABE044A00D0C368 /* Products */;
 			projectDirPath = "";
@@ -491,7 +491,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		17C7FAE02ABE5ADC00D0C368 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+		1742798B2AC090FC003F6FE0 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm";
 			requirement = {
@@ -502,9 +502,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		17C7FAE12ABE5ADC00D0C368 /* Lottie */ = {
+		1742798C2AC090FC003F6FE0 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17C7FAE02ABE5ADC00D0C368 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			package = 1742798B2AC090FC003F6FE0 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
 		};
 		17C7FAE42ABE5D5400D0C368 /* Components */ = {

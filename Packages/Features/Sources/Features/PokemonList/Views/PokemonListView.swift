@@ -16,18 +16,23 @@ struct PokemonListView: View {
     private let columns = [GridItem(.flexible()), GridItem(.flexible())]
 
     var body: some View {
-        LoadableView($viewModel.pokemonList) {
-            list in
-            gridView(using: list)
+        NavigationView {
+            LoadableView($viewModel.pokemonList) {
+                list in
+                gridView(using: list)
+            }
+            .task(viewModel.fetchPokemonList)
         }
-        .task(viewModel.fetchPokemonList)
     }
 
     func gridView(using list: [PokemonListItem]) -> some View {
-        LazyVGrid(columns: columns) {
-            ForEach(list) { pokemon in
-                PokemonCardView(pokemon: pokemon)
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 8) {
+                ForEach(list) { pokemon in
+                    PokemonCardView(pokemon: pokemon)
+                }
             }
+            .padding()
         }
     }
 }

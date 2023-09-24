@@ -9,6 +9,13 @@ import SwiftUI
 import Lottie
 
 public struct LoadingView: View {
+
+    private let animationSize: CGFloat
+
+    public init(loaderSize: CGFloat = 100) {
+        self.animationSize = loaderSize
+    }
+
     public var body: some View {
         VStack {
             Spacer()
@@ -18,7 +25,7 @@ public struct LoadingView: View {
                     try await loadingIndicator()
                 }
                 .looping()
-                .frame(width: 100, height: 100)
+                .frame(width: animationSize, height: animationSize)
                 Spacer()
             }
             Spacer()
