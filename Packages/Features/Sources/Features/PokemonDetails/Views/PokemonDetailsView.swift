@@ -10,17 +10,11 @@ import Components
 
 struct PokemonDetailsView: View {
 
-    @StateObject
-    var viewModel: PokemonDetailsViewModel
-
-    init(pokemon: Pokemon) {
-        self._viewModel = StateObject(
-            wrappedValue: PokemonDetailsViewModel(pokemon: pokemon))
-    }
+    let pokemon: Pokemon
 
     var body: some View {
         ZStack {
-            viewModel.pokemon.sortedTypes.first?.backgroundColor
+            pokemon.sortedTypes.first?.backgroundColor
                 .edgesIgnoringSafeArea(.all)
 
             ScrollView {
@@ -36,12 +30,12 @@ struct PokemonDetailsView: View {
     private var titleInfo: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(viewModel.pokemon.name.capitalized)
+                Text(pokemon.name.capitalized)
                     .foregroundColor(.white)
                     .font(.largeTitle)
 
                 HStack(spacing: 4) {
-                    ForEach(viewModel.pokemon.sortedTypes) { type in
+                    ForEach(pokemon.sortedTypes) { type in
                         typeCapsule(type)
                     }
                 }
@@ -49,7 +43,7 @@ struct PokemonDetailsView: View {
 
             Spacer()
 
-            Text("\(viewModel.pokemon.formattedId)")
+            Text("\(pokemon.formattedId)")
                 .foregroundColor(.white)
                 .font(.body)
                 .bold()
@@ -69,7 +63,7 @@ struct PokemonDetailsView: View {
 
     private var image: some View {
         CachedAsyncImage(
-            url: URL(string: viewModel.pokemon.sprites?.officialArtworkFrontDefault ?? ""),
+            url: URL(string: pokemon.sprites?.officialArtworkFrontDefault ?? ""),
             urlCache: .imageCache
         ) { image in
             image.resizable().aspectRatio(contentMode: .fit)
@@ -105,7 +99,7 @@ struct PokemonDetailsView: View {
 
                 Spacer()
 
-                Text(viewModel.pokemon.heightInMeters)
+                Text(pokemon.heightInMeters)
                     .foregroundColor(.black)
                     .font(.body)
             }
@@ -117,7 +111,7 @@ struct PokemonDetailsView: View {
 
                 Spacer()
 
-                Text(viewModel.pokemon.weightInKilograms)
+                Text(pokemon.weightInKilograms)
                     .foregroundColor(.black)
                     .font(.body)
             }
@@ -129,7 +123,7 @@ struct PokemonDetailsView: View {
 
                 Spacer()
 
-                Text(viewModel.pokemon.concatenatedAbilities)
+                Text(pokemon.concatenatedAbilities)
                     .foregroundColor(.black)
                     .font(.body)
             }
@@ -144,7 +138,7 @@ struct PokemonDetailsView: View {
                 .padding(.bottom, 4)
 
             Grid {
-                ForEach(viewModel.pokemon.stats) { stat in
+                ForEach(pokemon.stats) { stat in
                     GridRow {
                         HStack {
                             Text(stat.name)

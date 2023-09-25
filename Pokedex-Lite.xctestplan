@@ -39,6 +39,13 @@
         "identifier" : "NetworkingTests",
         "name" : "NetworkingTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Features",
+        "identifier" : "FeaturesTests",
+        "name" : "FeaturesTests"
+      }
     }
   ],
   "version" : 1

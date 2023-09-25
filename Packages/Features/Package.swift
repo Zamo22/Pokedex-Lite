@@ -22,7 +22,7 @@ let package = Package(
     targets: [
         .target(
             name: "Features",
-            dependencies: ["DependencyContainer", "Networking", "Core"]),
+            dependencies: ["DependencyContainer", "Networking", "Core", "Components"]),
         .testTarget(
             name: "FeaturesTests",
             dependencies: ["Features", "TestUtils"]),

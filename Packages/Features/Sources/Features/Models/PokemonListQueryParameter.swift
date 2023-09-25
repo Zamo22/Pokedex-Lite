@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PokemonListQueryParameter {
+enum PokemonListQueryParameter: Equatable {
     case limit(Int)
     case offset(Int)
 }

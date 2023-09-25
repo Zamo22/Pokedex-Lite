@@ -12,7 +12,7 @@ struct PokemonDetailsRepositoryImplementation: PokemonDetailsRepository {
     @Injected
     var service: PokemonService
 
-        // TODO: Add caching
+    // TODO: Potentially add caching if time permits
 
     func getPokemonDetails(fromUrl url: String) async throws -> Pokemon {
         try await service.getPokemonDetails(fromUrl: url)

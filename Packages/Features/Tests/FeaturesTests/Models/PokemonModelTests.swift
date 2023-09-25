@@ -6,30 +6,51 @@
 //
 
 import XCTest
+import TestUtils
+@testable import Features
 
-final class PokemonModelTests: XCTestCase {
+final class PokemonModelTests: PokedexTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testSortingTypesWhenReceivedInIncorrectOrder() {
+        let expectedTypes: [PokemonType] = [.grass, .poison]
+        let sortedTypes = Pokemon.mock.sortedTypes
+        XCTAssertEqual(expectedTypes, sortedTypes)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testFormattedIdAddsSufficientZeros() {
+        XCTAssertEqual("#002", Pokemon.mock.formattedId)
+
+        var twoDigitId = Pokemon.mock
+        twoDigitId.id = 13
+        XCTAssertEqual("#013", twoDigitId.formattedId)
+
+        var threeDigitId = Pokemon.mock
+        threeDigitId.id = 123
+        XCTAssertEqual("#123", threeDigitId.formattedId)
+
+        var fourDigitId = Pokemon.mock
+        fourDigitId.id = 1234
+        XCTAssertEqual("#1234", fourDigitId.formattedId)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testHeightInMetersConvertsDecimetersToMetersAndFormats() {
+        XCTAssertEqual(Pokemon.mock.heightInMeters, "1.0 m")
+
+        var heightWithRemainder = Pokemon.mock
+        heightWithRemainder.height = 35
+        XCTAssertEqual(heightWithRemainder.heightInMeters, "3.5 m")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testWeightInKilogramsConvertsHectogramsToKilogramsAndFormats() {
+        XCTAssertEqual(Pokemon.mock.weightInKilograms, "13.0 kg")
+
+        var weightWithRemainder = Pokemon.mock
+        weightWithRemainder.weight = 123
+        XCTAssertEqual(weightWithRemainder.weightInKilograms, "12.3 kg")
     }
 
+    func testConcatenatedAbilitiesFormatsAllAbilitiesAsASingleString() {
+        let expectedAbilityString = "Overgrow, Chlorophyll"
+        XCTAssertEqual(Pokemon.mock.concatenatedAbilities, expectedAbilityString)
+    }
 }
