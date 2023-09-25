@@ -13,32 +13,12 @@ struct PokemonListView: View {
     @StateObject
     var viewModel = PokemonListViewModel()
 
-    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
-
     var body: some View {
-        NavigationView {
-            LoadableView($viewModel.pokemonList) {
-                list in
-                gridView(using: list)
+        NavigationStack {
+            LoadableView($viewModel.pokemonList) { list in
+                PokemonListResultsView(pokemonList: list)
             }
             .task(viewModel.fetchPokemonList)
         }.accentColor(.white)
-    }
-
-    private func gridView(using list: [PokemonListItem]) -> some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 8) {
-                ForEach(list) { pokemon in
-                    PokemonCardView(pokemon: pokemon)
-                }
-            }
-            .padding()
-        }
-    }
-}
-
-struct PokemonListView_Previews: PreviewProvider {
-    static var previews: some View {
-        PokemonListView()
     }
 }
