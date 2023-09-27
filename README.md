@@ -7,9 +7,11 @@ You can also view limited details for each pokemon
 
 ### Functionality I'd like to add
 If time was permitting there's a few things I'd like to add to the application:
-- Pagination so that we could display more than just the first 100 pokemon as the API does seem to support pagination quite well 
+- Pagination so that we could display more than just the first 100 pokemon as the API does seem to support pagination quite well
+- Localisation - The API does support localization to some level so it would be great to add handling to support multiple languages
 - Dynamic searching: Instead of just searching the local results, I'd like to query the API itself
 - Caching. Although the images are being cached, I had originally intended to cache the Pokemon data as well, however, after seeing how fast the API calls actually were, I decided that this was less urgent but is something I would still like to add.
+(Note: The repository currently serves an identical purpose to the `Service` layer for this reason. Once caching is implemented, the purpose of the repository would be more visible)
 - Better model handling. To save time, I created one model for the response that is used across the application. However, the data structure of these models leaves a lot to be desired. Ideally I would map the models received to our own custom models that were easier to work with.
 - More details on the details screen: eg. displaying Evolution lines that let you visit other pokemon details directly
 
