@@ -15,7 +15,7 @@ class PokemonCardViewModel: ObservableObject {
     let pokemon: PokemonListItem
 
     @Injected
-    var repository: PokemonDetailsRepository
+    private var repository: PokemonDetailsRepository
 
     @Published
     var pokemonDetails: Loadable<Pokemon> = .loading

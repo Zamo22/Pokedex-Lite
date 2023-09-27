@@ -13,7 +13,7 @@ import DependencyContainer
 class PokemonListViewModel: ObservableObject {
 
     @Injected
-    var repository: PokemonListRepository
+    private var repository: PokemonListRepository
 
     @Published
     var pokemonList: Loadable<[PokemonListItem]> = .loading

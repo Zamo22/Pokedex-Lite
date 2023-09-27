@@ -11,16 +11,8 @@ import SwiftUI
 
 public extension CGFloat {
 
-    static var pokemonCardWidth: CGFloat {
-        UIScreen.screenWidth * 0.45
-    }
-
-    static var pokemonCardHeight: CGFloat {
-        pokemonCardWidth * 0.6
-    }
-
-    static var pokemonCardCornerRadius: CGFloat {
-        10
-    }
+    static let pokemonCardWidth = UIScreen.screenWidth * 0.45
+    static let pokemonCardHeight = pokemonCardWidth * 0.6
+    static let pokemonCardCornerRadius: CGFloat = 10
 
 }
