@@ -11,7 +11,7 @@ import DependencyContainer
 struct PokemonListRepositoryImplementation: PokemonListRepository {
 
     @Injected
-    var service: PokemonService
+    private var service: PokemonService
 
     var pokemonListLimit = 100
 

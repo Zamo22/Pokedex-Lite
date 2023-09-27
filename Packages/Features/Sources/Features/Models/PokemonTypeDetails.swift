@@ -19,15 +19,15 @@ struct PokemonTypeDetails: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.slot = try container.decodeIfPresent(Int.self, forKey: .slot)
-        let typeDetail = try container.decode(PokemonTypeDetails.self, forKey: .type)
-        self.type = typeDetail.name
+        let typeInfo = try container.decode(PokemonTypeInfo.self, forKey: .type)
+        self.type = typeInfo.name
     }
 
     enum CodingKeys: String, CodingKey {
         case slot, type
     }
 
-    private struct PokemonTypeDetails: Decodable {
+    private struct PokemonTypeInfo: Decodable {
         var name: PokemonType?
     }
 }

@@ -11,7 +11,7 @@ import Components
 struct PokemonListView: View {
 
     @StateObject
-    var viewModel = PokemonListViewModel()
+    private var viewModel = PokemonListViewModel()
 
     var body: some View {
         NavigationStack {

@@ -10,7 +10,7 @@ import DependencyContainer
 struct PokemonDetailsRepositoryImplementation: PokemonDetailsRepository {
 
     @Injected
-    var service: PokemonService
+    private var service: PokemonService
 
     // TODO: Potentially add caching if time permits
 

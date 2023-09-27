@@ -10,7 +10,7 @@ import SwiftUI
 struct PokemonListResultsView: View {
 
     @StateObject
-    var viewModel: PokemonListResultsViewModel
+    private var viewModel: PokemonListResultsViewModel
 
     init(pokemonList: [PokemonListItem]) {
         self._viewModel = StateObject(wrappedValue: PokemonListResultsViewModel(list: pokemonList))
@@ -31,7 +31,6 @@ struct PokemonListResultsView: View {
             }
             .padding()
         }
-//        .background(Color.gray.opacity(0.2))
         .searchable(text: $viewModel.searchText)
     }
 }

@@ -11,7 +11,7 @@ import Components
 struct PokemonCardView: View {
 
     @StateObject
-    var viewModel: PokemonCardViewModel
+    private var viewModel: PokemonCardViewModel
 
     init(pokemon: PokemonListItem) {
         self._viewModel = StateObject(

@@ -9,7 +9,7 @@ import Foundation
 
 class PokemonListResultsViewModel: ObservableObject {
 
-    var pokemonList: [PokemonListItem]
+    private var pokemonList: [PokemonListItem]
 
     @Published
     var searchText = ""
